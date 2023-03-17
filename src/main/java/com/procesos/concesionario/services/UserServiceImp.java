@@ -6,13 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImp implements UserService{
+
     @Autowired
     private UserRepository userRepository;
 
-    public User getUserById(Long id){return userRepository.findById(id).get();}
+    public User getUserById(Long id){
+        return userRepository.findById(id).get();
+    }
 
     @Override
     public List<User> allUser() {
